@@ -45,7 +45,31 @@
 
 uint256 ComputeMerkleRoot(std::vector<uint256> hashes, bool* mutated) {
     bool mutation = false;
+    /*
+        计算所有叶子节点的hash值计算，存储在inner数组
+        如果leaves.size()个数如果是2的幂次方，在下面第一个循环一次可获得根的hash值
+        ，并且存储在2^k=leaves.size(),inner[k]的位置，假设有8个叶子节点
+        那么计算完 inner[3]就是根的hash值，8个叶子节点代码计算过程如下。代码65行 
+        1.计算hash(ab) 存储在inner[1]
+        2.计算hash(cd) 存储在inner[2]
+        3.计算hash(ab+cd=N) 存储在inner[2]  (代码83行 2,3步骤在一个循环执行)
+        4.计算hash(ef)  存储在inner[1]，这是会覆盖步骤1
+        5.计算hash(gh)  (5,6,7在一个循环连续执行，代码73)
+        6.计算hash(ef+gh=M) 
+        7.计算hash(M+N) 存储在inner[3]
+
+           abcdefgh 
+              /\
+          abcd  efgh
+           /\     /\
+         ab cd ef  gh
+         /\  /\  /\  /\
+        a b  c d e f g h
+
+    */
+    printf("ComputeMerkleRoot hashes.size:%lu,hashes[0]:%s\n",(hashes.size()),hashes[0].ToString().c_str());
     while (hashes.size() > 1) {
+        printf("ComputeMerkleRoot hashes.size() > 1\n");
         if (mutated) {
             for (size_t pos = 0; pos + 1 < hashes.size(); pos += 2) {
                 if (hashes[pos] == hashes[pos + 1]) mutation = true;
@@ -53,12 +77,14 @@ uint256 ComputeMerkleRoot(std::vector<uint256> hashes, bool* mutated) {
         }
         if (hashes.size() & 1) {
             hashes.push_back(hashes.back());
+            printf("ComputeMerkleRoot  hashes.push_back:%s\n",(hashes.back()).ToString().c_str());
         }
         SHA256D64(hashes[0].begin(), hashes[0].begin(), hashes.size() / 2);
         hashes.resize(hashes.size() / 2);
     }
     if (mutated) *mutated = mutation;
     if (hashes.size() == 0) return uint256();
+    printf("ComputeMerkleRoot return hashes[0]:%s\n",hashes[0].ToString().c_str());
     return hashes[0];
 }
 
@@ -66,9 +92,13 @@ uint256 ComputeMerkleRoot(std::vector<uint256> hashes, bool* mutated) {
 uint256 BlockMerkleRoot(const CBlock& block, bool* mutated)
 {
     std::vector<uint256> leaves;
+    //获取一个区块交易的数量，也就是merkle的(调用resize设置vector大小，避免)
+    //避免在下面赋值需要重新分配内存
     leaves.resize(block.vtx.size());
     for (size_t s = 0; s < block.vtx.size(); s++) {
-        leaves[s] = block.vtx[s]->GetHash();
+        leaves[s] = block.vtx[s]->GetHash();//获取每一笔交易的hash值
+        printf("BlockMerkleRoot block.vtx[s] : %s\n",(*block.vtx[s]).ToString().c_str());
+        printf("BlockMerkleRoot block.vtx[s]->GetHash() : %s\n",(block.vtx[s]->GetHash()).ToString().c_str());
     }
     return ComputeMerkleRoot(std::move(leaves), mutated);
 }

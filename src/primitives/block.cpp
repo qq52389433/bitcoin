@@ -10,9 +10,21 @@
 #include <util/strencodings.h>
 #include <crypto/common.h>
 
+// -- by eac
+#define BEGIN(a)            ((char*)&(a))
+#define END(a)              ((char*)&((&(a))[1]))
+
 uint256 CBlockHeader::GetHash() const
 {
+    //printf("CBlockHeader::GetHash: %d , %d \n",nVersion,nNonce);
+    //printf("GetHash-begin-end %s\n", (SerializeHash(*this)).ToString().c_str());
     return SerializeHash(*this);
+
+    //printf("GetHash-begin-end nNonce %d ,Hash: %s\n", nNonce, (Hash(BEGIN(nVersion), END(nNonce))).ToString().c_str());
+    // -- by eac
+    //return Hash(BEGIN(nVersion), END(nNonce));
+
+
 }
 
 std::string CBlock::ToString() const

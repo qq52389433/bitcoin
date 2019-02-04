@@ -14,7 +14,12 @@
 #include <uint256.h>
 #include <version.h>
 
+// -- by eac
+// #include <openssl/sha.h>
+// #include <openssl/ripemd.h>
+
 #include <vector>
+
 
 typedef uint256 ChainCode;
 
@@ -75,6 +80,16 @@ inline uint256 Hash(const T1 pbegin, const T1 pend)
     CHash256().Write(pbegin == pend ? pblank : (const unsigned char*)&pbegin[0], (pend - pbegin) * sizeof(pbegin[0]))
               .Finalize((unsigned char*)&result);
     return result;
+
+    // // -- by eac
+    // //static const unsigned char pblank[1]= {};
+    // static unsigned char pblank[1];
+    // uint256 hash1;
+    // SHA256((pbegin == pend ? pblank : (unsigned char*)&pbegin[0]), (pend - pbegin) * sizeof(pbegin[0]), (unsigned char*)&hash1);
+    // uint256 hash2;
+    // SHA256((unsigned char*)&hash1, sizeof(hash1), (unsigned char*)&hash2);
+    // return hash2;
+
 }
 
 /** Compute the 256-bit hash of the concatenation of two objects. */
