@@ -80,6 +80,10 @@ const int64_t nStartupTime = GetTime();
 
 const char * const BITCOIN_CONF_FILENAME = "bitcoin.conf";
 const char * const BITCOIN_PID_FILENAME = "bitcoind.pid";
+// -- by eac
+//const char * const BITCOIN_CONF_FILENAME = "earthcoin.conf";
+//const char * const BITCOIN_PID_FILENAME = "earthcoind.pid";
+
 
 ArgsManager gArgs;
 
