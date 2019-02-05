@@ -176,7 +176,9 @@ class GetblockstatsTest(BitcoinTestFramework):
 
         # Mainchain's genesis block shouldn't be found on regtest
         assert_raises_rpc_error(-5, 'Block not found', self.nodes[0].getblockstats,
-                                hash_or_height='000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f')
+                                #hash_or_height='000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f')
+                                # -- by eac
+                                hash_or_height='0007e5a233e96f7b8d2413060ec38cf73c6f201bdb72f97b3241cc8ac6950a81')
 
 if __name__ == '__main__':
     GetblockstatsTest().main()
