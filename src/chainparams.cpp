@@ -73,20 +73,28 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
+        // 奖励减半时间间隔
         consensus.nSubsidyHalvingInterval = 210000;
         consensus.BIP16Exception = uint256S("0x00000000000002dc756eebf4f49723ed8d30cc28a5f108eb94b1ba88ac4f9c22");
+        // 区块高度
         consensus.BIP34Height = 227931;
+        // 区块hash
         consensus.BIP34Hash = uint256S("0x000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8");
         consensus.BIP65Height = 388381; // 000000000000000004c2b624ed5d7756c508d90fd0da2c7c679febfa6c4735f0
         consensus.BIP66Height = 363725; // 00000000000000000379eaa19dce8c9b722d46ae6a57c2f1a988119488b50931
         //consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         // -- by eac   00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         //consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        // 难度
         consensus.powLimit = uint256S("000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         
+        // 难度调整时间
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
+        // 区块产生平均时间
         consensus.nPowTargetSpacing = 10 * 60;
+        //是否允许最低难度
         consensus.fPowAllowMinDifficultyBlocks = false;
+        // 不调整难度
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
@@ -105,9 +113,14 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1510704000; // November 15th, 2017.
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000028822fef1c230963535a90d");
+        //最好的链至少应该有这么多工作。
+        // 当前难度最小值
+        //consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000028822fef1c230963535a90d");
+        // -- by eac
+        consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000000000004d7e896");
 
         // By default assume that the signatures in ancestors of this block are valid.
+        // 在此区块之前的区块都认为是有效的
         consensus.defaultAssumeValid = uint256S("0x0000000000000000002e63058c023a9a1de233554f28c7b21380b6c9003f36a8"); //534292
 
         /**
@@ -354,16 +367,23 @@ class CTestNetParams : public CChainParams {
 public:
     CTestNetParams() {
         strNetworkID = "test";
+        // 奖励减半时间间隔
         consensus.nSubsidyHalvingInterval = 210000;
         consensus.BIP16Exception = uint256S("0x00000000dd30457c001f4095d208cc1296b0eed002427aa599874af7a432b105");
+         // 区块高度
         consensus.BIP34Height = 21111;
+        // 区块hash
         consensus.BIP34Hash = uint256S("0x0000000023b3a96d3484e5abb3755c413e7d41500f8e2a5c3f0dd01299cd8ef8");
         consensus.BIP65Height = 581885; // 00000000007f6655f22f98e72ed80d8b06dc761d5da09df0fa1dc4be4f861eb6
         consensus.BIP66Height = 330776; // 000000002104c8c45e99a8853285a3b592602a3ccde2b832481da85e9e4ba182
         consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        // 难度调整时间
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
+        // 区块产生平均时间
         consensus.nPowTargetSpacing = 10 * 60;
+        //是否允许最低难度
         consensus.fPowAllowMinDifficultyBlocks = true;
+        // 不调整难度
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
@@ -382,6 +402,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1493596800; // May 1st 2017
 
         // The best chain should have at least this much work.
+        // 当前难度最小值
         consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000007dbe94253893cbd463");
 
         // By default assume that the signatures in ancestors of this block are valid.

@@ -1182,27 +1182,27 @@ bool IsInitialBlockDownload()
     LOCK(cs_main);
     if (latchToFalse.load(std::memory_order_relaxed))
     {
-        LogPrintf("IsInitialBlockDownload a");
+        LogPrintf("IsInitialBlockDownload a\n");
         return false;
     }
     if (fImporting || fReindex)
     {
-        LogPrintf("IsInitialBlockDownload b");
+        LogPrintf("IsInitialBlockDownload b\n");
         return true;
         }
     if (chainActive.Tip() == nullptr)
     {
-        LogPrintf("IsInitialBlockDownload c");
+        LogPrintf("IsInitialBlockDownload c\n");
         return true;
     }
     if (chainActive.Tip()->nChainWork < nMinimumChainWork)
     {
-        LogPrintf("IsInitialBlockDownload d");    
+        LogPrintf("IsInitialBlockDownload d : chainActive.Tip()->nChainWork: %s ,nMinimumChainWork: %s \n",chainActive.Tip()->nChainWork.ToString().c_str(), nMinimumChainWork.ToString().c_str());    
         return true;
     }
     if (chainActive.Tip()->GetBlockTime() < (GetTime() - nMaxTipAge))
     {
-        LogPrintf("IsInitialBlockDownload e");    
+        LogPrintf("IsInitialBlockDownload e\n");    
         return true;
     }
     LogPrintf("Leaving InitialBlockDownload (latching to false)\n");

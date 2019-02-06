@@ -45,6 +45,7 @@ struct BIP9Deployment {
 
 /**
  * Parameters that influence chain consensus.
+ * 影响共识的参数
  */
 struct Params {
     uint256 hashGenesisBlock;
@@ -61,6 +62,9 @@ struct Params {
     /**
      * Minimum blocks including miner confirmation of the total of 2016 blocks in a retargeting period,
      * (nPowTargetTimespan / nPowTargetSpacing) which is also used for BIP9 deployments.
+     * Examples: 1916 for 95%, 1512 for testchains.
+     * 在2016个区块中至少要有多少个区块被矿工确认，规则改变才能生效
+     * 在BIP9上线时还使用(nPowTargetTimespan / nPowTargetSpacing)值
      * Examples: 1916 for 95%, 1512 for testchains.
      */
     uint32_t nRuleChangeActivationThreshold;
