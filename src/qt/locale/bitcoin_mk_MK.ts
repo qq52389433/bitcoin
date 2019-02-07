@@ -590,7 +590,7 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Bitcoin Core</source>
+        <source>Earthcoin Core</source>
         <translation>Биткоин Core</translation>
     </message>
     <message>

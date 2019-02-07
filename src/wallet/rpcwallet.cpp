@@ -1,5 +1,5 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2009-2018 The Earthcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -3827,6 +3827,7 @@ UniValue sethdseed(const JSONRPCRequest& request)
     }
 
     if (IsInitialBlockDownload()) {
+        LogPrintf("Start rpcwallet IsInitialBlockDownload");
         throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "Cannot set a new HD seed while still in Initial Block Download");
     }
 

@@ -2466,8 +2466,8 @@
         <translation>S'està podant l'emmagatzemament de blocs...</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>Earthcoin Core</source>
+        <translation>Earthcoin Core</translation>
     </message>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2015-2018 The Bitcoin Core developers
+# Copyright (c) 2015-2018 The Earthcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test transaction signing using the signrawtransaction* RPCs."""
@@ -25,7 +25,7 @@ class RpcCreateMultiSigTest(BitcoinTestFramework):
     def run_test(self):
         node0,node1,node2 = self.nodes
 
-        # 50 BTC each, rest will be 25 BTC each
+        # 50 EAC each, rest will be 25 EAC each
         node0.generate(149)
         self.sync_all()
 

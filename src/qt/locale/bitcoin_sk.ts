@@ -3129,8 +3129,8 @@
         <translation>Nepodarilo sa spustiť HTTP server. Pre viac detailov zobrazte debug log.</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>Earthcoin Core</source>
+        <translation>Earthcoin Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

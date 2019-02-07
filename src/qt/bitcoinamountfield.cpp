@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2018 The Bitcoin Core developers
+// Copyright (c) 2011-2018 The Earthcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -121,7 +121,7 @@ public:
 
             const QFontMetrics fm(fontMetrics());
             int h = lineEdit()->minimumSizeHint().height();
-            int w = fm.width(BitcoinUnits::format(BitcoinUnits::BTC, BitcoinUnits::maxMoney(), false, BitcoinUnits::separatorAlways));
+            int w = fm.width(BitcoinUnits::format(BitcoinUnits::EAC, BitcoinUnits::maxMoney(), false, BitcoinUnits::separatorAlways));
             w += 2; // cursor blinking space
 
             QStyleOptionSpinBox opt;
@@ -147,7 +147,7 @@ public:
     }
 
 private:
-    int currentUnit{BitcoinUnits::BTC};
+    int currentUnit{BitcoinUnits::EAC};
     CAmount singleStep{CAmount(100000)}; // satoshis
     mutable QSize cachedMinimumSizeHint;
     bool m_allow_empty{true};

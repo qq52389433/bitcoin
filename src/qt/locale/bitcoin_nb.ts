@@ -3070,8 +3070,8 @@
         <translation>Kunne ikke starte HTTP-tjener. Se feilrettingslogg for detaljer.</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>Earthcoin Core</source>
+        <translation>Earthcoin Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

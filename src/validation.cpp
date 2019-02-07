@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2009-2018 The Earthcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -940,7 +940,7 @@ static bool AcceptToMemoryPoolWorker(const CChainParams& chainparams, CTxMemPool
         // Remove conflicting transactions from the mempool
         for (CTxMemPool::txiter it : allConflicting)
         {
-            LogPrint(BCLog::MEMPOOL, "replacing tx %s with %s for %s BTC additional fees, %d delta bytes\n",
+            LogPrint(BCLog::MEMPOOL, "replacing tx %s with %s for %s EAC additional fees, %d delta bytes\n",
                     it->GetTx().GetHash().ToString(),
                     hash.ToString(),
                     FormatMoney(nModifiedFees - nConflictingFees),
@@ -1177,19 +1177,25 @@ bool IsInitialBlockDownload()
     static std::atomic<bool> latchToFalse{false};
     // Optimization: pre-test latch before taking the lock.
     if (latchToFalse.load(std::memory_order_relaxed))
+    {
+        LogPrintf("IsInitialBlockDownload a0\n");
         return false;
+    }
 
     LOCK(cs_main);
     if (latchToFalse.load(std::memory_order_relaxed))
     {
+        LogPrintf("IsInitialBlockDownload a\n");
         return false;
     }
     if (fImporting || fReindex)
     {
+        LogPrintf("IsInitialBlockDownload b\n");
         return true;
         }
     if (chainActive.Tip() == nullptr)
     {
+        LogPrintf("IsInitialBlockDownload c\n");
         return true;
     }
     if (chainActive.Tip()->nChainWork < nMinimumChainWork)
@@ -1199,6 +1205,7 @@ bool IsInitialBlockDownload()
     }
     if (chainActive.Tip()->GetBlockTime() < (GetTime() - nMaxTipAge))
     {
+        LogPrintf("IsInitialBlockDownload e : chainActive.Tip()->GetBlockTime() : %d, (GetTime() - nMaxTipAge): %d\n",chainActive.Tip()->GetBlockTime(),(GetTime() - nMaxTipAge));
         return true;
     }
     LogPrintf("Leaving InitialBlockDownload (latching to false)\n");

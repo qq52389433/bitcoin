@@ -4097,8 +4097,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="-184"/>
-        <source>Bitcoin Core</source>
-        <translation type="unfinished">Bitcoin Core</translation>
+        <source>Earthcoin Core</source>
+        <translation type="unfinished">Earthcoin Core</translation>
     </message>
     <message>
         <location line="+1"/>

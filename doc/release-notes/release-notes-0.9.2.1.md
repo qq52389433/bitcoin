@@ -1,4 +1,4 @@
-Bitcoin Core version 0.9.2.1 is now available from:
+Earthcoin Core version 0.9.2.1 is now available from:
 
   https://bitcoin.org/bin/0.9.2.1/
 
@@ -93,7 +93,7 @@ Protocol and network code:
 Wallet:
 
 - Make GetAvailableCredit run GetHash() only once per transaction (performance improvement)
-- Lower paytxfee warning threshold from 0.25 BTC to 0.01 BTC
+- Lower paytxfee warning threshold from 0.25 EAC to 0.01 EAC
 - Fix importwallet nTimeFirstKey (trigger necessary rescans)
 - Log BerkeleyDB version at startup
 - CWallet init fix

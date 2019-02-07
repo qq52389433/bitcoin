@@ -1,4 +1,4 @@
-Bitcoin Core version 0.9.0 is now available from:
+Earthcoin Core version 0.9.0 is now available from:
 
   https://bitcoin.org/bin/0.9.0/
 
@@ -59,11 +59,11 @@ Also, the first time you run a 0.8.x release on a 0.9 wallet it will rescan
 the blockchain for missing spent coins, which will take a long time (tens
 of minutes on a typical machine).
 
-Rebranding to Bitcoin Core
+Rebranding to Earthcoin Core
 ---------------------------
 
 To reduce confusion between Bitcoin-the-network and Bitcoin-the-software we
-have renamed the reference client to Bitcoin Core.
+have renamed the reference client to Earthcoin Core.
 
 
 OP_RETURN and data in the block chain
@@ -143,7 +143,7 @@ Transaction Fees
 
 This release drops the default fee required to relay transactions across the
 network and for miners to consider the transaction in their blocks to
-0.01mBTC per kilobyte.
+0.01mEAC per kilobyte.
 
 Note that getting a transaction relayed across the network does NOT guarantee
 that the transaction will be accepted by a miner; by default, miners fill
@@ -156,7 +156,7 @@ the mintxfee setting to determine which low-priority transactions should
 be considered for inclusion in blocks.
 
 The wallet code still uses a default fee for low-priority transactions of
-0.1mBTC per kilobyte. During periods of heavy transaction volume, even this
+0.1mEAC per kilobyte. During periods of heavy transaction volume, even this
 fee may not be enough to get transactions confirmed quickly; the mintxfee
 option may be used to override the default.
 
@@ -239,7 +239,7 @@ Mining:
 
 Protocol and network:
 
-- Drop the fee required to relay a transaction to 0.01mBTC per kilobyte
+- Drop the fee required to relay a transaction to 0.01mEAC per kilobyte
 - Send tx relay flag with version
 - New 'reject' P2P message (BIP 0061, see
   https://gist.github.com/gavinandresen/7079034 for draft)
@@ -295,7 +295,7 @@ GUI:
 - Add Coin Control Features
 - Improve receive coins workflow: make the 'Receive' tab into a form to request
   payments, and move historical address list functionality to File menu.
-- Rebrand to `Bitcoin Core`
+- Rebrand to `Earthcoin Core`
 - Move initialization/shutdown to a thread. This prevents "Not responding"
   messages during startup. Also show a window during shutdown.
 - Don't regenerate autostart link on every client startup

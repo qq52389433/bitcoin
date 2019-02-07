@@ -656,7 +656,7 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Bitcoin Core</source>
+        <source>Earthcoin Core</source>
         <translation>nucleo Bitcoin</translation>
     </message>
     <message>

@@ -1,4 +1,4 @@
-Bitcoin Core version 0.17.0 is now available from:
+Earthcoin Core version 0.17.0 is now available from:
 
   <https://bitcoincore.org/bin/bitcoin-core-0.17.0/>
 
@@ -46,10 +46,10 @@ processing the entire blockchain.
 Compatibility
 ==============
 
-Bitcoin Core is extensively tested on multiple operating systems using
+Earthcoin Core is extensively tested on multiple operating systems using
 the Linux kernel, macOS 10.10+, and Windows 7 and newer (Windows XP is not supported).
 
-Bitcoin Core should also work on most other Unix-like systems but is not
+Earthcoin Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 From 0.17.0 onwards macOS <10.10 is no longer supported. 0.17.0 is built using Qt 5.9.x, which doesn't
@@ -256,7 +256,7 @@ hardware implementations will typically implement multiple roles simultaneously.
 Upgrading non-HD wallets to HD wallets
 --------------------------------------
 
-Since Bitcoin Core 0.13.0, creating new BIP 32 Hierarchical Deterministic wallets has been supported by Bitcoin Core but old non-HD wallets could not be upgraded to HD. Now non-HD wallets can be upgraded to HD using the `-upgradewallet` command line option. This upgrade will result in the all keys in the keypool being marked as used and a new keypool generated. **A new backup must be made when this upgrade is performed.**
+Since Earthcoin Core 0.13.0, creating new BIP 32 Hierarchical Deterministic wallets has been supported by Earthcoin Core but old non-HD wallets could not be upgraded to HD. Now non-HD wallets can be upgraded to HD using the `-upgradewallet` command line option. This upgrade will result in the all keys in the keypool being marked as used and a new keypool generated. **A new backup must be made when this upgrade is performed.**
 
 Additionally, `-upgradewallet` can be used to upgraded from a non-split HD chain (all keys generated with `m/0'/0'/i'`) to a split HD chain (receiving keys generated with `'m/0'/0'/i'` and change keys generated with `m'/0'/1'/i'`). When this upgrade occurs, all keys already in the keypool will remain in the keypool to be used until all keys from before the upgrade are exhausted. This is to avoid issues with backups and downgrades when some keys may come from the change key keypool. Users can begin using the new split HD chain keypools by using the `newkeypool` RPC to mark all keys in the keypool as used and begin using a new keypool generated from the split HD chain.
 
@@ -286,7 +286,7 @@ Low-level RPC changes
   `getrawtransaction` RPC commands.
 - New `fees` field introduced in `getrawmempool`, `getmempoolancestors`, `getmempooldescendants` and
    `getmempoolentry` when verbosity is set to `true` with sub-fields `ancestor`, `base`, `modified`
-   and `descendant` denominated in BTC. This new field deprecates previous fee fields, such as
+   and `descendant` denominated in EAC. This new field deprecates previous fee fields, such as
    `fee`, `modifiedfee`, `ancestorfee` and `descendantfee`.
 - The new RPC `getzmqnotifications` returns information about active ZMQ
   notifications.
@@ -536,7 +536,7 @@ Support for Python 2 has been discontinued for all test files and tools.
 - #11200 `5f2a399` Allow for aborting rescans in the GUI (achow101)
 - #12791 `3a8a4dc` Expose a transaction's weight via RPC (TheBlueMatt)
 - #12436 `6e67754` Adds a functional test to validate the transaction version number in the RPC output (251Labs)
-- #12240 `6f8b345` Introduced a new `fees` structure that aggregates all sub-field fee types denominated in BTC (mryandao)
+- #12240 `6f8b345` Introduced a new `fees` structure that aggregates all sub-field fee types denominated in EAC (mryandao)
 - #12321 `eac067a` p2wsh and p2sh-p2wsh address in decodescript (fivepiece)
 - #13090 `17266a1` Remove Safe mode (achow101, laanwj)
 - #12639 `7eb7076` Reduce `cs_main` lock in listunspent (promag)

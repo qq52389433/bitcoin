@@ -1,5 +1,5 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2009-2018 The Earthcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -117,7 +117,7 @@ public:
         // 当前难度最小值
         //consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000028822fef1c230963535a90d");
         // -- by eac
-        consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000000000004d7e896");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000001000");
 
         // By default assume that the signatures in ancestors of this block are valid.
         // 在此区块之前的区块都认为是有效的

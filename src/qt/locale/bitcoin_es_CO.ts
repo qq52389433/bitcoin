@@ -1895,8 +1895,8 @@ Exportar los datos en la pestaña actual a un archivo</translation>
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>Earthcoin Core</source>
+        <translation>Earthcoin Core</translation>
     </message>
     <message>
         <source>This is the transaction fee you may discard if change is smaller than dust at this level</source>

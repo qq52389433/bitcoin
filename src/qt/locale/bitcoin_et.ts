@@ -1918,7 +1918,7 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Bitcoin Core</source>
+        <source>Earthcoin Core</source>
         <translation>Bitcoini tuumik</translation>
     </message>
     <message>

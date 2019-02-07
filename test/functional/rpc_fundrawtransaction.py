@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2018 The Bitcoin Core developers
+# Copyright (c) 2014-2018 The Earthcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the fundrawtransaction RPC."""
@@ -455,7 +455,7 @@ class RawTransactionsTest(BitcoinTestFramework):
         mSigObj = self.nodes[2].addmultisigaddress(2, [addr1Obj['pubkey'], addr2Obj['pubkey']])['address']
 
 
-        # send 1.2 BTC to msig addr
+        # send 1.2 EAC to msig addr
         txId = self.nodes[0].sendtoaddress(mSigObj, 1.2)
         self.sync_all()
         self.nodes[1].generate(1)

@@ -1038,7 +1038,7 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Bitcoin Core</source>
+        <source>Earthcoin Core</source>
         <translation>Craidd Bitcoin</translation>
     </message>
     <message>
