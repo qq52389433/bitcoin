@@ -356,7 +356,11 @@ public:
         };
 
         /* disable fallback fee on mainnet */
-        m_fallback_fee_enabled = false;
+        //是否禁用交易手续费，当矿工少，交易费用过大时需要禁用,
+        //（m_fallback_fee_enabled = true时为禁用交易费）
+        //m_fallback_fee_enabled = false;
+        // -- by eac
+        m_fallback_fee_enabled = true;
     }
 };
 

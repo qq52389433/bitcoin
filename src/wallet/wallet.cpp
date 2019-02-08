@@ -2856,10 +2856,12 @@ bool CWallet::CreateTransaction(interfaces::Chain::Lock& locked_chain, const std
                     return false;
                 }
 
+                //估算最低费用
                 nFeeNeeded = GetMinimumFee(*this, nBytes, coin_control, ::mempool, ::feeEstimator, &feeCalc);
                 if (feeCalc.reason == FeeReason::FALLBACK && !m_allow_fallback_fee) {
+                    LogPrintf("nFeeNeeded : %ld , m_allow_fallback_fee: %d", nFeeNeeded, m_allow_fallback_fee);
                     // eventually allow a fallback fee
-                    strFailReason = _("Fee estimation failed. Fallbackfee is disabled. Wait a few blocks or enable -fallbackfee.");
+                    strFailReason = _("Fee estimation failed. Fallbackfee is disabled. Wait a few blocks or enable -fallbackfee...");
                     return false;
                 }
 
@@ -4102,6 +4104,7 @@ std::shared_ptr<CWallet> CWallet::CreateWalletFromFile(interfaces::Chain& chain,
         walletInstance->m_min_fee = CFeeRate(n);
     }
 
+    LogPrintf("set m_allow_fallback_fee: walletInstance->m_allow_fallback_fee = Params().IsFallbackFeeEnabled();\n");
     walletInstance->m_allow_fallback_fee = Params().IsFallbackFeeEnabled();
     if (gArgs.IsArgSet("-fallbackfee")) {
         CAmount nFeePerK = 0;
@@ -4114,6 +4117,7 @@ std::shared_ptr<CWallet> CWallet::CreateWalletFromFile(interfaces::Chain& chain,
                         _("This is the transaction fee you may pay when fee estimates are not available."));
         }
         walletInstance->m_fallback_fee = CFeeRate(nFeePerK);
+        LogPrintf("set m_allow_fallback_fee: walletInstance->m_allow_fallback_fee = nFeePerK != 0");
         walletInstance->m_allow_fallback_fee = nFeePerK != 0; //disable fallback fee in case value was set to 0, enable if non-null value
     }
     if (gArgs.IsArgSet("-discardfee")) {

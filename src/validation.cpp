@@ -1178,14 +1178,12 @@ bool IsInitialBlockDownload()
     // Optimization: pre-test latch before taking the lock.
     if (latchToFalse.load(std::memory_order_relaxed))
     {
-        LogPrintf("IsInitialBlockDownload a0\n");
         return false;
     }
 
     LOCK(cs_main);
     if (latchToFalse.load(std::memory_order_relaxed))
     {
-        LogPrintf("IsInitialBlockDownload a\n");
         return false;
     }
     if (fImporting || fReindex)

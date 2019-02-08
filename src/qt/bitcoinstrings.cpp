@@ -38,7 +38,7 @@ QT_TRANSLATE_NOOP("bitcoin-core", ""
 "Error: Listening for incoming connections failed (listen returned error %s)"),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
 "Fee estimation failed. Fallbackfee is disabled. Wait a few blocks or enable -"
-"fallbackfee."),
+"fallbackfee.."),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
 "Group outputs by address, selecting all or none, instead of selecting on a "
 "per-output basis. Privacy is improved as an address is only used once "
