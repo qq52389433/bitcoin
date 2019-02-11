@@ -1,7 +1,7 @@
 (note: this is a temporary file, to be added-to by anybody, and moved to
 release-notes at release time)
 
-Earthcoin Core version *version* is now available from:
+Bitcoin Core version *version* is now available from:
 
   <https://bitcoincore.org/bin/bitcoin-core-*version*/>
 
@@ -47,16 +47,16 @@ processing the entire blockchain.
 Compatibility
 ==============
 
-Earthcoin Core is supported and extensively tested on operating systems using
+Bitcoin Core is supported and extensively tested on operating systems using
 the Linux kernel, macOS 10.10+, and Windows 7 and newer.  It is not recommended
-to use Earthcoin Core on unsupported systems.
+to use Bitcoin Core on unsupported systems.
 
-Earthcoin Core should also work on most other Unix-like systems but is not
+Bitcoin Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 From 0.17.0 onwards, macOS <10.10 is no longer supported.  0.17.0 is
 built using Qt 5.9.x, which doesn't support versions of macOS older than
-10.10.  Additionally, Earthcoin Core does not yet change appearance when
+10.10.  Additionally, Bitcoin Core does not yet change appearance when
 macOS "dark mode" is activated.
 
 In addition to previously-supported CPU platforms, this release's
@@ -89,7 +89,7 @@ Configuration option changes
   documentation](https://github.com/bitcoin/bitcoin/blob/master/doc/zmq.md#usage)
   for details.
 
-- The `enablebip61` option (introduced in Earthcoin Core 0.17.0) is
+- The `enablebip61` option (introduced in Bitcoin Core 0.17.0) is
   used to toggle sending of BIP 61 reject messages. Reject messages have no use
   case on the P2P network and are only logged for debugging by most network
   nodes. The option will now by default be off for improved privacy and security
@@ -116,7 +116,7 @@ Configuration option changes
   defaults to being off, so that changes in policy and disconnect/ban behavior
   will not cause a node that is whitelisting another to be dropped by peers.
   Users can still explicitly enable this behavior with the command line option
-  (and may want to consider letting the Earthcoin Core project know about their
+  (and may want to consider letting the Bitcoin Core project know about their
   use-case, as this feature could be deprecated in the future).
 
 Documentation
@@ -132,9 +132,9 @@ Documentation
 
 - A new [document](https://github.com/bitcoin/bitcoin/blob/master/doc/bitcoin-conf.md)
   about the `bitcoin.conf` file describes how to use it to configure
-  Earthcoin Core.
+  Bitcoin Core.
 
-- A new document introduces Earthcoin Core's BIP174
+- A new document introduces Bitcoin Core's BIP174
   [Partially-Signed Bitcoin Transactions (PSBT)](https://github.com/bitcoin/bitcoin/blob/master/doc/psbt.md)
   interface, which is used to allow multiple programs to collaboratively
   work to create, sign, and broadcast new transactions.  This is useful
@@ -156,7 +156,7 @@ Build system changes
 - A new `--disable-bip70` option may be passed to `./configure` to
   prevent Bitcoin-Qt from being built with support for the BIP70 payment
   protocol or from linking libssl.  As the payment protocol has exposed
-  Earthcoin Core to libssl vulnerabilities in the past, builders who don't
+  Bitcoin Core to libssl vulnerabilities in the past, builders who don't
   need BIP70 support are encouraged to use this option to reduce their
   exposure to future vulnerabilities.
 
@@ -231,7 +231,7 @@ in the Low-level Changes section below.
   ignored or are inconsistent, if there are any.
 
 - The `getaddressinfo` RPC now returns an additional `solvable` boolean
-  field when Earthcoin Core knows enough about the address's scriptPubKey,
+  field when Bitcoin Core knows enough about the address's scriptPubKey,
   optional redeemScript, and optional witnessScript in order for the
   wallet to be able to generate an unsigned input spending funds sent to
   that address.
@@ -245,7 +245,7 @@ in the Low-level Changes section below.
 - The `importprivkey` RPC will preserve previously-set labels for
   addresses or public keys corresponding to the private key being
   imported.  For example, if you imported a watch-only address with the
-  label "cold wallet" in earlier releases of Earthcoin Core, subsequently
+  label "cold wallet" in earlier releases of Bitcoin Core, subsequently
   importing the private key would default to resetting the address's
   label to the default empty-string label ("").  In this release, the
   previous label of "cold wallet" will be retained.  If you optionally
@@ -303,7 +303,7 @@ Configuration
 Changes for particular platforms
 --------------------------------
 
-- On macOS, Earthcoin Core now opts out of application CPU throttling
+- On macOS, Bitcoin Core now opts out of application CPU throttling
   ("app nap") during initial blockchain download, when catching up from
   over 100 blocks behind the current chain tip, or when reindexing chain
   data.  This helps prevent these operations from taking an excessively

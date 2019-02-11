@@ -2920,7 +2920,7 @@
         <translation>غير قادر على بدء خادم ال HTTP. راجع سجل تصحيح الأخطاء للحصول على التفاصيل.</translation>
     </message>
     <message>
-        <source>Earthcoin Core</source>
+        <source>Bitcoin Core</source>
         <translation>جوهر بيتكوين</translation>
     </message>
     <message>

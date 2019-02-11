@@ -3022,7 +3022,7 @@
         <translation>HTTP sunucusu başlatılamadı. Ayrıntılar için debug.log dosyasına bakınız.</translation>
     </message>
     <message>
-        <source>Earthcoin Core</source>
+        <source>Bitcoin Core</source>
         <translation>Bitcoin Çekirdeği</translation>
     </message>
     <message>

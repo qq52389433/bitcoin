@@ -33,7 +33,7 @@ Download the source code:
 git clone https://github.com/bitcoin/bitcoin
 ```
 
-## Building Earthcoin Core
+## Building Bitcoin Core
 
 **Important**: Use `gmake` (the non-GNU `make` will exit with an error):
 

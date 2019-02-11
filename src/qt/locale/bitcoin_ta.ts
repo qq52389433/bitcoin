@@ -712,7 +712,7 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Earthcoin Core</source>
+        <source>Bitcoin Core</source>
         <translation>Bitcoin மையம்</translation>
     </message>
     <message>

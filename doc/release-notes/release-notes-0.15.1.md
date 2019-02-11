@@ -1,4 +1,4 @@
-Earthcoin Core version *0.15.1* is now available from:
+Bitcoin Core version *0.15.1* is now available from:
 
   <https://bitcoincore.org/bin/bitcoin-core-0.15.1/>
 
@@ -52,10 +52,10 @@ processing the entire blockchain.
 Compatibility
 ==============
 
-Earthcoin Core is extensively tested on multiple operating systems using
+Bitcoin Core is extensively tested on multiple operating systems using
 the Linux kernel, macOS 10.8+, and Windows Vista and later. Windows XP is not supported.
 
-Earthcoin Core should also work on most other Unix-like systems but is not
+Bitcoin Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 
@@ -65,7 +65,7 @@ Notable changes
 Network fork safety enhancements
 --------------------------------
 
-A number of changes to the way Earthcoin Core deals with peer connections and invalid blocks
+A number of changes to the way Bitcoin Core deals with peer connections and invalid blocks
 have been made, as a safety precaution against blockchain forks and misbehaving peers.
 
 - Unrequested blocks with less work than the minimum-chain-work are now no longer processed even

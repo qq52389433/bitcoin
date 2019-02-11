@@ -2850,7 +2850,7 @@
         <translation>No se ha podido iniciar el servidor HTTP. Ver debug log para detalles.</translation>
     </message>
     <message>
-        <source>Earthcoin Core</source>
+        <source>Bitcoin Core</source>
         <translation>bitcoin core</translation>
     </message>
     <message>

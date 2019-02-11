@@ -3070,7 +3070,7 @@
         <translation>Imposibil de pornit serverul HTTP. Pentru detalii vezi logul de depanare.</translation>
     </message>
     <message>
-        <source>Earthcoin Core</source>
+        <source>Bitcoin Core</source>
         <translation>Nucleul Bitcoin</translation>
     </message>
     <message>

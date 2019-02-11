@@ -1228,7 +1228,7 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Earthcoin Core</source>
+        <source>Bitcoin Core</source>
         <translation>Núcleo de Bitcoin</translation>
     </message>
     <message>

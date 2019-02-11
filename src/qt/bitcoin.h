@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2016 The Earthcoin Core developers
+// Copyright (c) 2011-2016 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -27,7 +27,7 @@ class Handler;
 class Node;
 } // namespace interfaces
 
-/** Class encapsulating Earthcoin Core startup and shutdown.
+/** Class encapsulating Bitcoin Core startup and shutdown.
  * Allows running startup and shutdown in a different thread from the UI thread.
  */
 class BitcoinCore: public QObject

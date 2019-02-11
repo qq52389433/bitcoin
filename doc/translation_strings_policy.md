@@ -1,7 +1,7 @@
 Translation Strings Policy
 ===========================
 
-This document provides guidelines for internationalization of the Earthcoin Core software.
+This document provides guidelines for internationalization of the Bitcoin Core software.
 
 How to translate?
 ------------------
